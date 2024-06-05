@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void GetComponents()
+    private void GetComponents() //calls components
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -44,19 +44,19 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HorizontalMovement()
     {
-        dirX = Input.GetAxis("Horizontal");
+        dirX = Input.GetAxis("Horizontal");  //Determining direction based on horizontal input
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
 
-    private void JumpInput()
+    private void JumpInput() //If the player is on the ground and space is pressed, activate jump
     {
-        if (Input.GetKey("space") && IsGrounded())
+        if (Input.GetKey("space") && IsGrounded()) 
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
-    private void UpdateAnimationState()
+    private void UpdateAnimationState() //Update the animation according to movement states
 {   
          if (dirX > 0f)
         {
@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
  
        }
-       private bool IsGrounded() 
+       private bool IsGrounded() //Check the player is grounded 
        {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
        }
