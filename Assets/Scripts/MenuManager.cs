@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+//It functions the same as the audio manager, the only difference is that the sprite of the mute button is updated.
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Button muteButton;
@@ -51,7 +51,7 @@ public class MenuManager : MonoBehaviour
         }
         
     }
-    public void QuitButtonClick()
+    public void QuitButtonClick() //Exit the game 
     {
         Application.Quit(); 
         Debug.Log("Oyuncu Gitti");
@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void PlayButtonClick()
+    public void PlayButtonClick() //Load the gameplay 
     {
         SceneManager.LoadScene(1);
         
