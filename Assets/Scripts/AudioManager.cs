@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
   
-    //Used to load the music in the game 
+  
     private int _muteButtonIndex
     {
         get => PlayerPrefs.GetInt("MuteButtonState", 0);
@@ -14,11 +14,11 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        LoadData();  //Used to run when the game starts
+        LoadData();  
         
         
     }
-    private void LoadData() //It is used to turn the sound on and off according to the mute button.
+    private void LoadData() 
     {
         if (_muteButtonIndex == 1) 
         {
